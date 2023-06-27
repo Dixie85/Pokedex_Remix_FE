@@ -12,7 +12,6 @@ export const meta: V2_MetaFunction = () => {
 
 const Details = () => {
   const { state } = useLocation();
-  console.log(state);
 
   return (
     <DetailsCard pokemon={state.pokemon} />

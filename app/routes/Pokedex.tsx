@@ -1,6 +1,6 @@
 import type { LoaderArgs, V2_MetaFunction } from "@remix-run/node";
 import { redirect } from "@remix-run/node"
-import { Form, Outlet, useLoaderData, useLocation, } from "@remix-run/react";
+import { Form, Outlet, useLocation, } from "@remix-run/react";
 import Header from "~/Layout/Header";
 import Footer from "~/Layout/Footer";
 
@@ -19,8 +19,6 @@ export async function loader({ request }: LoaderArgs) {
 }
 
 export default function Pokedex() {
-  const data = useLoaderData<typeof loader>();
-  console.log(data);
   const { pathname } = useLocation()
 
   return (

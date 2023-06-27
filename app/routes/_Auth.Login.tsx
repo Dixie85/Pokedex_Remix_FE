@@ -7,8 +7,8 @@ import BackButton from "~/Components/BackButton";
 
 export const meta: V2_MetaFunction = () => {
   return [
-    { title: "New Remix App" },
-    { name: "description", content: "Welcome to Remix!" },
+    { title: "LogIn" },
+    { name: "description", content: "LogIn to Pokedex!" },
   ];
 };
 
@@ -38,7 +38,6 @@ export const action = async ({ request }: ActionArgs) => {
 
 export default function LogIn() {
   const data = useActionData<typeof action>();
-  console.log(data);
 
   return (
     <main className="relative flex max-w-screen-md h-screen mx-auto  bg-cover bg-Hero">

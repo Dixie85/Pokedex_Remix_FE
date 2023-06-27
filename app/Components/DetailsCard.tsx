@@ -8,9 +8,7 @@ interface ISearchCard {
 }
 
 const DetailsCard = ({ pokemon }: ISearchCard) => {
-  console.log(pokemon);
   const pokeType = pokemon!.types[0].type ?? colors["normal"]
-  console.log(pokeType, 'pokeType');
 
   return (
     //@ts-ignore

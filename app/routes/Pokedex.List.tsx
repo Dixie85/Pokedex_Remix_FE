@@ -14,7 +14,6 @@ export const meta: V2_MetaFunction = () => {
 export async function action({ request }: ActionArgs) {
   const formData = await request.formData();
   const { userInput, sortby } = Object.fromEntries(formData);
-  console.log(userInput);
 
   const res = await fetch(`http://localhost:8088/api/pokemon/${userInput}/${sortby}`);
   return res;
@@ -24,8 +23,6 @@ export async function action({ request }: ActionArgs) {
 const List = () => {
   const data = useActionData<typeof action>();
   if (data?.error) throw new Error(data?.error)
-  console.log(data, 'data');
-  console.log(data?.docs);
   const poke = data?.docs ?? []
   return (
     <section className="flex flex-col mb-20">

@@ -35,7 +35,6 @@ export const action = async ({ request }: ActionArgs) => {
 
 export default function LogIn() {
   const data = useActionData<typeof action>();
-  console.log(data);
 
   return (
     <main className="relative flex max-w-screen-md h-screen mx-auto  bg-cover bg-Hero">
