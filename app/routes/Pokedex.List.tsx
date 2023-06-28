@@ -15,7 +15,7 @@ export async function action({ request }: ActionArgs) {
   const formData = await request.formData();
   const { userInput, sortby } = Object.fromEntries(formData);
 
-  const res = await fetch(`http://localhost:8088/api/pokemon/${userInput}/${sortby}`);
+  const res = await fetch(`https://poke-payload.onrender.com/api/pokemon/${userInput}/${sortby}`);
   return res;
 }
 
