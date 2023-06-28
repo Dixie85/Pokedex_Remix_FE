@@ -4,6 +4,7 @@ import type { ActionArgs } from "@remix-run/node";
 import { redirect } from "@remix-run/node";
 import InfoButton from "~/Components/InfoButton";
 import BackButton from "~/Components/BackButton";
+import { URLs } from "~/config/config.url";
 
 export const meta: V2_MetaFunction = () => {
   return [
@@ -16,7 +17,7 @@ export const action = async ({ request }: ActionArgs) => {
   try {
     const formData = await request.formData();
     const userCredentials = Object.fromEntries(formData)
-    const req = await fetch('https://poke-payload.onrender.com/api/pokeusers/login', {
+    const req = await fetch(`${URLs.server}/api/pokeusers/login`, {
       method: "POST",
       credentials: "include",
       headers: {

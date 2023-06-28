@@ -3,6 +3,7 @@ import type { IPokemon } from "~/types/types.inerfaces";
 import { useActionData } from "@remix-run/react";
 import ListCard from "~/Components/ListCard";
 import pokeNoMatch from "../Assets/Images/pokebal_error.webp"
+import { URLs } from "~/config/config.url";
 
 export const meta: V2_MetaFunction = () => {
   return [
@@ -15,7 +16,7 @@ export async function action({ request }: ActionArgs) {
   const formData = await request.formData();
   const { userInput, sortby } = Object.fromEntries(formData);
 
-  const res = await fetch(`https://poke-payload.onrender.com/api/pokemon/${userInput}/${sortby}`);
+  const res = await fetch(`${URLs.server}/api/pokemon/${userInput}/${sortby}`);
   return res;
 }
 
