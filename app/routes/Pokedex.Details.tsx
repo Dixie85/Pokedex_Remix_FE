@@ -14,7 +14,9 @@ const Details = () => {
   const { state } = useLocation();
 
   return (
-    <DetailsCard pokemon={state.pokemon} />
+    <>
+      {state ? <DetailsCard pokemon={state?.pokemon} /> : <span></span>}
+    </>
   )
 }
 
