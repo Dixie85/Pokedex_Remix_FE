@@ -1,5 +1,5 @@
 import type { LoaderArgs, V2_MetaFunction } from "@remix-run/node";
-import { redirect } from "@remix-run/node"
+// import { redirect } from "@remix-run/node"
 import { Form, Outlet, useLocation, } from "@remix-run/react";
 import Header from "~/Layout/Header";
 import Footer from "~/Layout/Footer";
@@ -13,8 +13,8 @@ export const meta: V2_MetaFunction = () => {
 };
 
 export async function loader({ request }: LoaderArgs) {
-  const cookie = request.headers.get("Cookie");
-  if (!cookie) return redirect('/login')
+  // const cookie = request.headers.get("Cookie");
+  // if (!cookie) return redirect('/login')
   return {}
 }
 
