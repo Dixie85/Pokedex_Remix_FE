@@ -34,6 +34,7 @@ export const action = async ({ request }: ActionArgs) => {
     return "Invalid credentials"
   } catch (err) {
     console.log(err)
+    return null
   };
 }
 
